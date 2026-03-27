@@ -1,0 +1,22 @@
+<div class="user-list-container">
+  <div class="user-list-container__list-actions">
+    <mat-form-field class="example-full-width">
+      <input [formControl]="searchControl" matInput placeholder="Search User">
+    </mat-form-field>
+
+    <div class="user-list-container__list-actions__view-options">
+      <button
+        type="button"
+        class="user-list-container__list-actions__view-options__button"
+        (click)="createNewUser()">
+        <i class="fa-solid fa-plus"></i>
+      </button>
+    </div>
+  </div>
+
+  <app-users-tiles-view
+    [deletingUserId]="deletingUserId()"
+    [users]="filteredUsers()"
+    (deleteUser)="removeUser($event)">
+  </app-users-tiles-view>
+</div>

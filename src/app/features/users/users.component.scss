@@ -1,0 +1,37 @@
+.user-list-container {
+  padding: 30px;
+
+  &__list-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+
+    &__view-options {
+      &__button {
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: 0.2s ease;
+
+        i {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  mat-form-field {
+    width: 40%;
+    .mdc-text-field {
+      background: transparent;
+      .mat-mdc-form-field-focus-overlay {
+        background: transparent;
+      }
+    }
+  }
+}

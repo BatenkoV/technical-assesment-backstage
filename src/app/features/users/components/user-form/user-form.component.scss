@@ -1,0 +1,22 @@
+.user-manipulation-container {
+  display: flex;
+  justify-content: center;
+
+  &__card {
+    width: 50%;
+
+    &__user-form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+
+      &__form-field {
+        width: 100%;
+      }
+
+      mat-form-field {
+        flex: 1 1 calc(50% - 8px);
+      }
+    }
+  }
+}

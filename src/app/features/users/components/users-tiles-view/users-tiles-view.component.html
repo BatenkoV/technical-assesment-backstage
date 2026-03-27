@@ -1,0 +1,40 @@
+<div class="users-container">
+  @for (item of users()?.users; track item.id) {
+    <div class="users-container__user-tile" [class.deleting]="deletingUserId() === item.id">
+      <mat-card class="users-container__user-tile__card" appearance="outlined">
+        <div class="users-container__user-tile__card__actions-container">
+          <mat-card-title class="users-container__user-tile__card__user-title">
+            {{ item.firstName }} {{ item.lastName }}
+          </mat-card-title>
+
+          <div class="users-container__user-tile__card__actions-container__actions">
+            @for (button of userActions; track $index) {
+              <i
+                matTooltipPosition="left"
+                matTooltip="Action is not available, please sign in"
+                (click)="actionEvent(item.id, button)"
+                [class]="getActionIcon(button.action, item.id)"
+                [class.action-disabled]="button.authRequired && !authService.isLoggedIn()"
+                [matTooltipDisabled]="!(button.authRequired && !authService.isLoggedIn())">
+              </i>
+            }
+          </div>
+        </div>
+
+        <div class="users-container__user-tile__card__description-container">
+          <img
+            class="users-container__user-tile__card__description-container__user-image"
+            (error)="onImageError($event)"
+            [src]="item.image">
+
+          <div class="users-container__user-tile__card__description-container__user-info">
+            <p>{{ item.university }}</p>
+            <p>{{ item.email }}</p>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+  } @empty {
+    <p>No data available</p>
+  }
+</div>

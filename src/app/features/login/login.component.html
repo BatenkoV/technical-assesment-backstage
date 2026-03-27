@@ -1,0 +1,25 @@
+<div class="login-page">
+  <div class="login-container">
+    <div class="login-container__login-card">
+      <p class="login-container__login-card__sign-in-title">
+        Sign in to continue to your account
+      </p>
+
+      <ng-container [formGroup]="form">
+        <mat-form-field appearance="outline" class="login-form__field">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" formControlName="email" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="login-form__field">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" formControlName="password" />
+        </mat-form-field>
+
+        <button (click)="submit()" mat-button class="login-form__button">
+          Sign In
+        </button>
+      </ng-container>
+    </div>
+  </div>
+</div>
