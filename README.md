@@ -1,6 +1,6 @@
 # Technical Assessment Backstage
 
-Angular application for user management with support for search, view switching, favorites, and local state updates for created, edited, and deleted users.
+Angular application for user management with support for search, favorites, and local state updates for created, edited, and deleted users.
 
 ## Tech Stack
 
