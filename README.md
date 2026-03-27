@@ -11,9 +11,6 @@ Angular application for user management with support for search, view switching,
  - Signals
 
 ## Features
-
-- Display users in two modes:
-  - table view
   - tile view
   - Search users
   - Add new users
