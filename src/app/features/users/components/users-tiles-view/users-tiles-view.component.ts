@@ -31,16 +31,15 @@ export class UsersTilesViewComponent {
   public defaultImageUrl = '../assets/images/default-image.png';
   public userActions = [
     { action: 'addToFavorite', authRequired: true },
-    { action: 'edit' },
-    { action: 'delete' },
+    { action: 'edit', authRequired: true },
+    { action: 'delete', authRequired: true },
   ];
 
   public actionEvent(userId: number, event: { action: string; authRequired?: boolean }): void {
+    if (!this.authService.isLoggedIn()) return;
+
     switch (event.action) {
       case 'addToFavorite': {
-        if (!this.authService.isLoggedIn()) {
-          return;
-        }
         this.authService.toggleFavorite(userId);
         break;
       }
